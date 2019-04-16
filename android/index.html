@@ -12,12 +12,12 @@
 
 
 
-  <meta name="description" content="替换Homebrew源">
+  <meta name="description" content="安装Linux时慢，进入启动盘黑屏的问题">
 
 
 
 
-  <meta name="keywords" content="homebrew,homebrew源,镜像,清华镜像,中科大镜像,">
+  <meta name="keywords" content="linux,启动慢,安装linux,">
 
 
 
@@ -32,21 +32,21 @@
 
 
 
-<link rel="canonical" href="https://note.dog/replace-homebrew-source/">
+<link rel="canonical" href="https://note.dog/android/">
 
 
-<meta name="description" content="在用brew时偶尔会出现卡死或者卡在updateing brew的情况，这个情况多数是因为外网不通的问题。替换homebrew源即可。">
-<meta name="keywords" content="homebrew,homebrew源,镜像,清华镜像,中科大镜像">
+<meta name="description" content="在用rufus制作启动盘的时候，选择用GPT+dd方式即可。">
+<meta name="keywords" content="linux,启动慢,安装linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="替换Homebrew源">
-<meta property="og:url" content="https://note.dog/replace-homebrew-source/index.html">
+<meta property="og:title" content="安装Linux时慢，进入启动盘黑屏的问题">
+<meta property="og:url" content="https://note.dog/android/index.html">
 <meta property="og:site_name" content="笔记狗">
-<meta property="og:description" content="在用brew时偶尔会出现卡死或者卡在updateing brew的情况，这个情况多数是因为外网不通的问题。替换homebrew源即可。">
+<meta property="og:description" content="在用rufus制作启动盘的时候，选择用GPT+dd方式即可。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-23T08:16:40.000Z">
+<meta property="og:updated_time" content="2019-03-25T03:17:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="替换Homebrew源">
-<meta name="twitter:description" content="在用brew时偶尔会出现卡死或者卡在updateing brew的情况，这个情况多数是因为外网不通的问题。替换homebrew源即可。">
+<meta name="twitter:title" content="安装Linux时慢，进入启动盘黑屏的问题">
+<meta name="twitter:description" content="在用rufus制作启动盘的时候，选择用GPT+dd方式即可。">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
@@ -73,7 +73,7 @@
 
 
 
-    <title> 替换Homebrew源 - 笔记狗 </title>
+    <title> 安装Linux时慢，进入启动盘黑屏的问题 - 笔记狗 </title>
   </head>
 
   <body>
@@ -119,12 +119,12 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          替换Homebrew源
+          安装Linux时慢，进入启动盘黑屏的问题
         
       </h1>
 
       <time class="post-time">
-          3月 23 2019
+          3月 25 2019
       </time>
     </header>
 
@@ -132,15 +132,8 @@
 
     
             <div class="post-content">
-            <p>在用brew时偶尔会出现卡死或者卡在<code>updateing brew</code>的情况，这个情况多数是因为外网不通的问题。替换homebrew源即可。</p>
-<a id="more"></a>
-<p>替换brew.git:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/brew.git</span><br></pre></td></tr></table></figure>
-<p>替换homebrew-core.git:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure>
-<p>这是中科大的镜像，需要替换清华的请移步清华大学镜像官网：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</a></p>
-<p>回复官方源请使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/brew.git</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"<span class="variable">$(brew --repo)</span>/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line">git remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-core.git</span><br></pre></td></tr></table></figure>
+            <p>在用rufus制作启动盘的时候，选择用GPT+dd方式即可。</p>
+
             </div>
           
 
@@ -149,15 +142,11 @@
 		
 		<div class="post-tags">
 		  
-			<a href="/tags/homebrew/">homebrew</a>
+			<a href="/tags/linux/">linux</a>
 		  
-			<a href="/tags/homebrew源/">homebrew源</a>
+			<a href="/tags/启动慢/">启动慢</a>
 		  
-			<a href="/tags/镜像/">镜像</a>
-		  
-			<a href="/tags/清华镜像/">清华镜像</a>
-		  
-			<a href="/tags/中科大镜像/">中科大镜像</a>
+			<a href="/tags/安装linux/">安装linux</a>
 		  
 		</div>
 		
@@ -166,15 +155,15 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/android/">
+      <a class="prev" href="/install-linux-error/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">安装Linux时慢，进入启动盘黑屏的问题</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/android-cut-fit/">
-        <span class="next-text nav-default">关于Android刘海屏适配的想法</span>
+      <a class="next" href="/replace-homebrew-source/">
+        <span class="next-text nav-default">替换Homebrew源</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

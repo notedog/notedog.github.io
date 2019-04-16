@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="description" content="关于Android刘海屏适配的想法">
+
+
+
+
+  <meta name="keywords" content="android,刘海屏,适配,屏幕适配,">
+
+
+
+
+
+  <link rel="alternate" href="/default" title="笔记狗">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/logo.png?v=1.1">
+
+
+
+<link rel="canonical" href="https://note.dog/android-cut-fit/">
+
+
+<meta name="description" content="小张感觉这个东西也没有太多可说的，毕竟按照现在的发展趋势，Android刘海屏马上要被消灭了…">
+<meta name="keywords" content="android,刘海屏,适配,屏幕适配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Android刘海屏适配的想法">
+<meta property="og:url" content="https://note.dog/android-cut-fit/index.html">
+<meta property="og:site_name" content="笔记狗">
+<meta property="og:description" content="小张感觉这个东西也没有太多可说的，毕竟按照现在的发展趋势，Android刘海屏马上要被消灭了…">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-16T06:00:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Android刘海屏适配的想法">
+<meta name="twitter:description" content="小张感觉这个东西也没有太多可说的，毕竟按照现在的发展趋势，Android刘海屏马上要被消灭了…">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
+<link href="https://fonts.lug.ustc.edu.cn/css?family=Open+Sans" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 关于Android刘海屏适配的想法 - 笔记狗 </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">笔记狗</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                关于
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          关于Android刘海屏适配的想法
+        
+      </h1>
+
+      <time class="post-time">
+          11月 24 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>小张感觉这个东西也没有太多可说的，毕竟按照现在的发展趋势，Android刘海屏马上要被消灭了…</p>
+<a id="more"></a>
+<h3 id="1-获取状态栏高度手动往下挤布局"><a href="#1-获取状态栏高度手动往下挤布局" class="headerlink" title="1.获取状态栏高度手动往下挤布局"></a>1.获取状态栏高度手动往下挤布局</h3><p>获取高度状态栏/工具栏高度代码:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Rect rectgle= <span class="keyword">new</span> Rect();</span><br><span class="line">Window window= getWindow();</span><br><span class="line">window.getDecorView().getWindowVisibleDisplayFrame(rectgle);</span><br><span class="line"><span class="keyword">int</span> StatusBarHeight= rectgle.top;</span><br><span class="line"><span class="keyword">int</span> contentViewTop= </span><br><span class="line">    window.findViewById(Window.ID_ANDROID_CONTENT).getTop();</span><br><span class="line"><span class="keyword">int</span> TitleBarHeight= contentViewTop - StatusBarHeight;</span><br><span class="line"></span><br><span class="line">   Log.i(<span class="string">"*** Jorgesys :: "</span>, <span class="string">"StatusBar Height= "</span> + StatusBarHeight + <span class="string">" , TitleBar Height = "</span> + TitleBarHeight);</span><br></pre></td></tr></table></figure>
+<p>在Activity的onCreat中获取状态栏的高度：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getStatusBarHeight</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> resourceId = getResources().getIdentifier(<span class="string">"status_bar_height"</span>, <span class="string">"dimen"</span>, <span class="string">"android"</span>);</span><br><span class="line">  <span class="keyword">if</span> (resourceId &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      result = getResources().getDimensionPixelSize(resourceId);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，google 官方提供的获取刘海屏（刘海数量/类型）方法是：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DisplayCutout cutout = mContext.getDisplayCutout();</span><br></pre></td></tr></table></figure>
+<p>可以根据DisplayCutout来判断刘海的位置和大小，但是很不幸，Android≠安卓。在水深火热的中国安卓环境下，各家制定了自己的规则，甚至有的厂商改掉了getDisplayCutout的返回值…所以个人感觉上面的方法是目前最合适最简单的…</p>
+<blockquote>
+<p>有个东西要说一下，如果你不按照各家的规则去说明自己适配了刘海屏，那么那家的ui会默认不把你归类到‘已适配’的分类中，需要手动在设置中开启。</p>
+</blockquote>
+<h3 id="2-直接用fitinwindows固定布局"><a href="#2-直接用fitinwindows固定布局" class="headerlink" title="2.直接用fitinwindows固定布局"></a>2.直接用fitinwindows固定布局</h3><p>这样对于首页是多tab的app很不友好，特别是在父窗口的布局设置了这个属性，会把自窗口的东西全部挤下去…还有分段式背景也会存在问题。</p>
+<p>你可能会觉得上面的方法很垃圾…但是小张真的觉得很实用…流下了没有技术的泪水…</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/android/">android</a>
+		  
+			<a href="/tags/刘海屏/">刘海屏</a>
+		  
+			<a href="/tags/适配/">适配</a>
+		  
+			<a href="/tags/屏幕适配/">屏幕适配</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/replace-homebrew-source/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">替换Homebrew源</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/apk-size-optimization/">
+        <span class="next-text nav-default">apk大小优化</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+    2019
+    <span class="footer-author">小张.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
