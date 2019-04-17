@@ -12,12 +12,12 @@
 
 
 
-  <meta name="description" content="自建NAS">
+  <meta name="description" content="homebrew安装和下载包速度优化">
 
 
 
 
-  <meta name="keywords" content="NAS,">
+  <meta name="keywords" content="镜像,honebrew,brew,中科大,清华大学,">
 
 
 
@@ -32,21 +32,21 @@
 
 
 
-<link rel="canonical" href="https://note.dog/my-nas/">
+<link rel="canonical" href="https://note.dog/homebrew-optimization/">
 
 
-<meta name="description" content="机器是几天前配的学习机，装了windwos。想办法自己搞个nas玩玩。">
-<meta name="keywords" content="NAS">
+<meta name="description" content="安装homebrew过慢解决方法解决方法： 1.下载官网脚本curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install &amp;gt;&amp;gt; brew_install 2.替换脚本地址https://github.com/Homebrew/brew 替换为https://mirrors.ustc.edu.cn">
+<meta name="keywords" content="镜像,honebrew,brew,中科大,清华大学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自建NAS">
-<meta property="og:url" content="https://note.dog/my-nas/index.html">
+<meta property="og:title" content="homebrew安装和下载包速度优化">
+<meta property="og:url" content="https://note.dog/homebrew-optimization/index.html">
 <meta property="og:site_name" content="笔记狗">
-<meta property="og:description" content="机器是几天前配的学习机，装了windwos。想办法自己搞个nas玩玩。">
+<meta property="og:description" content="安装homebrew过慢解决方法解决方法： 1.下载官网脚本curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install &amp;gt;&amp;gt; brew_install 2.替换脚本地址https://github.com/Homebrew/brew 替换为https://mirrors.ustc.edu.cn">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-02T12:48:54.000Z">
+<meta property="og:updated_time" content="2019-04-17T02:27:43.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自建NAS">
-<meta name="twitter:description" content="机器是几天前配的学习机，装了windwos。想办法自己搞个nas玩玩。">
+<meta name="twitter:title" content="homebrew安装和下载包速度优化">
+<meta name="twitter:description" content="安装homebrew过慢解决方法解决方法： 1.下载官网脚本curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install &amp;gt;&amp;gt; brew_install 2.替换脚本地址https://github.com/Homebrew/brew 替换为https://mirrors.ustc.edu.cn">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
@@ -73,7 +73,7 @@
 
 
 
-    <title> 自建NAS - 笔记狗 </title>
+    <title> homebrew安装和下载包速度优化 - 笔记狗 </title>
   </head>
 
   <body>
@@ -119,12 +119,12 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          自建NAS
+          homebrew安装和下载包速度优化
         
       </h1>
 
       <time class="post-time">
-          4月 02 2019
+          4月 16 2019
       </time>
     </header>
 
@@ -132,27 +132,14 @@
 
     
             <div class="post-content">
-            <p>机器是几天前配的学习机，装了windwos。想办法自己搞个nas玩玩。</p>
-<a id="more"></a>
-<p>配置大概是：</p>
-<ul>
-<li>256 固态 + 1 Tb 机械硬盘</li>
-<li>8G 运存</li>
-<li>i3 8100</li>
-<li>B360M</li>
-<li>100Mbs下载 + 40Mbs上传</li>
-<li>GTX 950</li>
-</ul>
-<p>本来准备系统就用黑群辉的，教程：<a href="https://blog.csdn.net/qq_36169781/article/details/86482826" target="_blank" rel="noopener">https://blog.csdn.net/qq_36169781/article/details/86482826</a></p>
-<p>但是对于这个机器来说，还是windows舒服点。对于黑屏的问题，可以用显卡欺骗器。</p>
-<p>所以最后软件的话：</p>
-<ul>
-<li>下载：迅雷+motrix</li>
-<li>文件管理：<a href="https://filebrowser.xyz/" target="_blank" rel="noopener">File Browser</a></li>
-<li>远程：TeamViewer+本地Windows自带远程工具</li>
-<li>公网IP：10010</li>
-</ul>
-<p>这样的话，即使在后台跑着FileBrowser+TeamViewer的话，也是可以跑一些脚本的。并且日常用的话也不会有什么影响。</p>
+            <h2 id="安装homebrew过慢解决方法"><a href="#安装homebrew过慢解决方法" class="headerlink" title="安装homebrew过慢解决方法"></a>安装homebrew过慢解决方法</h2><p>解决方法：</p>
+<h3 id="1-下载官网脚本"><a href="#1-下载官网脚本" class="headerlink" title="1.下载官网脚本"></a>1.下载官网脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install &gt;&gt; brew_install</span><br></pre></td></tr></table></figure>
+<h3 id="2-替换脚本地址"><a href="#2-替换脚本地址" class="headerlink" title="2.替换脚本地址"></a>2.替换脚本地址</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Homebrew/brew</span><br></pre></td></tr></table></figure>
+<p>替换为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://mirrors.ustc.edu.cn/brew.git</span><br></pre></td></tr></table></figure></p>
+<p>如果是之前的脚本，还需要改（目前位置这个地址都指向下载好的本地路径了，可以不需要这个步骤）：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://github.com/Homebrew/homebrew-core</span><br></pre></td></tr></table></figure>
+<p>替换为<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure></p>
+<p>然后运行本地改好的脚本即可</p>
 
             </div>
           
@@ -162,7 +149,15 @@
 		
 		<div class="post-tags">
 		  
-			<a href="/tags/NAS/">NAS</a>
+			<a href="/tags/镜像/">镜像</a>
+		  
+			<a href="/tags/honebrew/">honebrew</a>
+		  
+			<a href="/tags/brew/">brew</a>
+		  
+			<a href="/tags/中科大/">中科大</a>
+		  
+			<a href="/tags/清华大学/">清华大学</a>
 		  
 		</div>
 		
@@ -171,15 +166,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/homebrew-optimization/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">homebrew安装和下载包速度优化</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
     
-    
-      <a class="next" href="/yum-error-yuminstall/">
-        <span class="next-text nav-default">yum安装时报错“File "/bin/yum", line xx except KeyboardInterrupt, e:“</span>
+      <a class="next" href="/my-nas/">
+        <span class="next-text nav-default">自建NAS</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
